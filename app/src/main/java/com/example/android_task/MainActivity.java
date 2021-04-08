@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recyclerViewAdapter);
 
-
         try {
             //get svg photo as document file
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
