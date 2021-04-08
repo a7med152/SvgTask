@@ -52,15 +52,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+            //get svg photo as document file
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(this.getAssets().open("MapTest.svg"));
 
 
+            //get specific node from document file
             NodeList nodes = document.getElementById("DOORS").getChildNodes();
+
+            //loop in node data
             for (int i = 0; i < document.getElementById("DOORS").getChildNodes().getLength(); i++) {
+                //check if node is valid
                 if (document.getElementById("DOORS").getChildNodes().item(i).getNodeName().equals("line")){
+                    //get data as element
                     Element element = (Element) nodes.item(i);
+                    //add value to array
                     stringArrayList.add(element.getAttribute("id"));
                 }
             }
